@@ -47,3 +47,31 @@ prev.addEventListener("click", function() {
 
     lightboxImg.src = images[currentIndex].src;
 });
+const filterButtons = document.querySelectorAll(".filter-btn");
+const galleryImages = document.querySelectorAll(".gallery-img");
+
+filterButtons.forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+        filterButtons.forEach(function(btn) {
+            btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        const filter = button.getAttribute("data-filter");
+
+        galleryImages.forEach(function(image) {
+
+            if (filter === "All" || image.getAttribute("data-category") === filter) {
+                image.style.display = "block";
+            } else {
+                image.style.display = "none";
+            }
+
+        });
+
+    });
+
+});
