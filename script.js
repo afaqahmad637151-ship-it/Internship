@@ -75,3 +75,33 @@ filterButtons.forEach(function(button) {
     });
 
 });
+document.addEventListener("keydown", function(event) {
+
+    // Escape se lightbox close
+    if (event.key === "Escape") {
+        lightbox.style.display = "none";
+    }
+
+    // Right arrow = Next
+    if (event.key === "ArrowRight") {
+        currentIndex++;
+
+        if (currentIndex >= images.length) {
+            currentIndex = 0;
+        }
+
+        lightboxImg.src = images[currentIndex].src;
+    }
+
+    // Left arrow = Previous
+    if (event.key === "ArrowLeft") {
+        currentIndex--;
+
+        if (currentIndex < 0) {
+            currentIndex = images.length - 1;
+        }
+
+        lightboxImg.src = images[currentIndex].src;
+    }
+
+});
