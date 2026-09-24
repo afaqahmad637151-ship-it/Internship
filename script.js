@@ -9,7 +9,7 @@ const next = document.getElementById("next");
 let currentIndex = 0;
 
 
-// Image click
+
 images.forEach(function(image, index) {
     image.addEventListener("click", function() {
         currentIndex = index;
@@ -19,13 +19,12 @@ images.forEach(function(image, index) {
 });
 
 
-// Close button
 close.addEventListener("click", function() {
     lightbox.style.display = "none";
 });
 
 
-// Next button
+
 next.addEventListener("click", function() {
     currentIndex++;
 
@@ -37,7 +36,7 @@ next.addEventListener("click", function() {
 });
 
 
-// Previous button
+
 prev.addEventListener("click", function() {
     currentIndex--;
 
@@ -77,12 +76,12 @@ filterButtons.forEach(function(button) {
 });
 document.addEventListener("keydown", function(event) {
 
-    // Escape se lightbox close
+    
     if (event.key === "Escape") {
         lightbox.style.display = "none";
     }
 
-    // Right arrow = Next
+    
     if (event.key === "ArrowRight") {
         currentIndex++;
 
@@ -93,7 +92,6 @@ document.addEventListener("keydown", function(event) {
         lightboxImg.src = images[currentIndex].src;
     }
 
-    // Left arrow = Previous
     if (event.key === "ArrowLeft") {
         currentIndex--;
 
@@ -104,4 +102,4 @@ document.addEventListener("keydown", function(event) {
         lightboxImg.src = images[currentIndex].src;
     }
 
-});
+})
