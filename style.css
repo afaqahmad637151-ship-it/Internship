@@ -92,7 +92,7 @@ p {
     font-size: 40px;
     cursor: pointer;
 }
-#prev,
+
 #next {
     position: absolute;
     top: 50%;
